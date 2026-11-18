@@ -12,12 +12,13 @@
 
 <style>
 :root {
-  --olive-dark: #3b4a1b;
-  --olive-light: #5c7033;
-  --vanilla-bg: #f9f6f0;
+  /* تم تعديل الألوان لتكون أكثر عمقاً وأناقة */
+  --olive-dark: #2c3812; 
+  --olive-light: #4e6127;
+  --vanilla-bg: #fcfaf5;
   --vanilla-card: #ffffff;
-  --gold: #d4af37;
-  --gold-glow: rgba(212, 175, 55, 0.4);
+  --gold: #dcb336;
+  --gold-glow: rgba(220, 179, 54, 0.3);
   --text-color: #2c3316;
 }
 
@@ -35,8 +36,8 @@ body {
   align-items: center;
   justify-content: center;
   background: 
-    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.15), transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(92, 112, 51, 0.1), transparent 40%),
+    radial-gradient(circle at 10% 20%, rgba(220, 179, 54, 0.15), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(78, 97, 39, 0.1), transparent 40%),
     var(--vanilla-bg);
   overflow-x: hidden;
 }
@@ -44,11 +45,11 @@ body {
 .container {
   width: 100%;
   max-width: 550px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   border: 2px solid var(--gold);
   border-radius: 30px;
   padding: 35px 25px;
-  box-shadow: 0 15px 40px rgba(59, 74, 27, 0.08), 0 0 20px var(--gold-glow);
+  box-shadow: 0 15px 40px rgba(44, 56, 18, 0.08), 0 0 20px var(--gold-glow);
   position: relative;
   overflow: hidden;
 }
@@ -123,7 +124,7 @@ h1 {
   font-size: 16px;
   text-decoration: none;
   margin-bottom: 20px;
-  direction: ltr; /* لضمان ظهور الأرقام بشكل صحيح */
+  direction: ltr; 
 }
 
 .phone-number i {
@@ -181,7 +182,7 @@ h1 {
 .platform-card:hover {
   transform: translateY(-3px);
   border-color: var(--gold);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 8px 20px rgba(220, 179, 54, 0.15);
   background: #fff;
 }
 
@@ -211,8 +212,9 @@ h1 {
 .facebook-group { background: #4267B2; }
 .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 .tiktok { background: #000000; }
-.instapay { background: #6f2c91; } /* لون مقارب لإنستاباي */
-.wallet { background: #e30613; } /* لون فودافون كاش */
+.instapay { background: #6f2c91; }
+.wallet { background: #e30613; }
+.whatsapp { background: #25D366; }
 
 .btn-visit {
   padding: 8px 14px;
@@ -288,7 +290,7 @@ h1 {
 
     <div class="subtitle">✨ طرح ترندات بكل الألوان ✨</div>
     
-    <!-- رقم الهاتف من الصورة -->
+    <!-- رقم الهاتف -->
     <a href="tel:01110187700" class="phone-number">
       <i class="fa-solid fa-phone-volume"></i> 01110187700
     </a>
@@ -303,8 +305,17 @@ h1 {
 
   <div class="platform-grid">
 
-    <!-- فيسبوك بيدج -->
-    <a href="https://www.facebook.com/share/1EC37Z2T7x/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="platform-card">
+    <!-- تواصل مع الأونر (واتساب) -->
+    <a href="https://wa.me/+201110187700" target="_blank" rel="noopener noreferrer" class="platform-card">
+      <div class="platform-name">
+        <div class="platform-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+        للتواصل مع الأونر
+      </div>
+      <div class="btn-visit">مراسلة <i class="fa-solid fa-arrow-left"></i></div>
+    </a>
+
+    <!-- فيسبوك (الرابط الجديد) -->
+    <a href="https://www.facebook.com/share/1CgCjVSXjy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="platform-card">
       <div class="platform-name">
         <div class="platform-icon facebook"><i class="fa-brands fa-facebook-f"></i></div>
         صفحة الفيسبوك

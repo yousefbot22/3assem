@@ -1,20 +1,31 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NONO STORE | Kids & Teens Fashion</title>
+<title>طرحتني | Tarhatny Store</title>
 
+<!-- مكتبة الأيقونات -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- خط Cairo العربي -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --olive-dark: #3b4a1b;
+  --olive-light: #5c7033;
+  --vanilla-bg: #f9f6f0;
+  --vanilla-card: #ffffff;
+  --gold: #d4af37;
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  --text-color: #2c3316;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Cairo', sans-serif;
 }
 
 body {
@@ -23,46 +34,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(circle at 5% 10%, #ffc8df, transparent 30%),
-    radial-gradient(circle at 95% 15%, #c7dcff, transparent 30%),
-    radial-gradient(circle at 10% 90%, #d4f8db, transparent 30%),
-    radial-gradient(circle at 90% 90%, #fff0b5, transparent 30%),
-    #fff9f1;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.15), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(92, 112, 51, 0.1), transparent 40%),
+    var(--vanilla-bg);
   overflow-x: hidden;
 }
 
 .container {
   width: 100%;
-  max-width: 650px;
-  background: rgba(255,255,255,.88);
-  border: 3px solid white;
-  border-radius: 35px;
-  padding: 35px 28px;
-  box-shadow: 0 20px 60px rgba(111,75,110,.13);
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--gold);
+  border-radius: 30px;
+  padding: 35px 25px;
+  box-shadow: 0 15px 40px rgba(59, 74, 27, 0.08), 0 0 20px var(--gold-glow);
   position: relative;
   overflow: hidden;
 }
 
-.container::before,
-.container::after {
-  content: "✦";
-  position: absolute;
-  font-size: 65px;
-  opacity: .13;
-  pointer-events: none;
-}
-
+/* تأثير الإضاءة الذهبية في الخلفية */
 .container::before {
-  color: #ff69a6;
-  top: 90px;
-  right: 15px;
-}
-
-.container::after {
-  color: #54b8e8;
-  bottom: 90px;
-  left: 15px;
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: var(--gold-glow);
+  filter: blur(50px);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .header {
@@ -71,91 +73,95 @@ body {
   z-index: 1;
 }
 
-.logo {
-  width: 95px;
-  height: 95px;
+.logo-icon {
+  width: 85px;
+  height: 85px;
   margin: 0 auto 15px;
-  border-radius: 30px;
-  background: linear-gradient(135deg,#ff79ae,#ad7aff,#62c9ed);
+  border-radius: 50%;
+  background: var(--olive-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 43px;
-  transform: rotate(-7deg);
-  box-shadow: 0 12px 25px #cda1dc66;
+  color: var(--gold);
+  font-size: 40px;
+  box-shadow: 0 0 25px var(--gold-glow);
+  border: 2px solid var(--gold);
 }
 
 h1 {
-  font-size: clamp(35px, 8vw, 49px);
+  font-size: 38px;
   font-weight: 900;
-  letter-spacing: -2px;
-  background: linear-gradient(90deg,#ff5595,#a45ee9,#38aee1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--olive-dark);
+  letter-spacing: -1px;
+  margin-bottom: 5px;
 }
 
 .tagline {
-  color: #977b9e;
-  font-size: 12px;
+  color: var(--olive-light);
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 3px;
-  margin-top: 3px;
+  margin-bottom: 15px;
 }
 
 .subtitle {
   display: inline-block;
-  background: #fff0f6;
-  color: #e65391;
-  padding: 9px 19px;
+  background: var(--vanilla-bg);
+  color: var(--olive-dark);
+  padding: 8px 20px;
   border-radius: 30px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
-  margin-top: 17px;
+  border: 1px solid var(--gold);
+  margin-bottom: 15px;
+}
+
+/* رقم الهاتف */
+.phone-number {
+  display: block;
+  color: var(--olive-dark);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  direction: ltr; /* لضمان ظهور الأرقام بشكل صحيح */
+}
+
+.phone-number i {
+  color: var(--gold);
+  margin-left: 5px;
 }
 
 .description {
-  color: #897b8c;
-  font-size: 13px;
-  margin: 15px auto 22px;
+  color: #6b7355;
+  font-size: 14px;
+  margin-bottom: 25px;
   line-height: 1.8;
-  max-width: 400px;
 }
-
-.age-section {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 28px;
-}
-
-.age {
-  padding: 7px 14px;
-  border-radius: 30px;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.age:nth-child(1) { background:#ffe1ed; color:#e94e8b; }
-.age:nth-child(2) { background:#e1f5ff; color:#329bc9; }
-.age:nth-child(3) { background:#e4f8e7; color:#399d61; }
-.age:nth-child(4) { background:#f0e6ff; color:#9562d4; }
 
 .section-title {
-  color: #716078;
-  font-size: 12px;
+  color: var(--olive-dark);
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  height: 1px;
+  width: 40px;
+  background: var(--gold);
 }
 
 .platform-grid {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   position: relative;
   z-index: 1;
 }
@@ -164,112 +170,105 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 16px;
-  background: white;
-  border-radius: 22px;
+  padding: 12px 18px;
+  background: var(--vanilla-bg);
+  border-radius: 18px;
   text-decoration: none;
-  border: 2px solid #f5edf5;
-  box-shadow: 0 6px 17px rgba(80,50,90,.06);
-  transition: .3s ease;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .platform-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 13px 25px rgba(100,70,120,.14);
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+  background: #fff;
 }
 
 .platform-name {
   display: flex;
   align-items: center;
-  gap: 13px;
-  color: #493c50;
-  font-size: 14px;
+  gap: 12px;
+  color: var(--olive-dark);
+  font-size: 15px;
   font-weight: 700;
 }
 
 .platform-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 23px;
+  font-size: 20px;
   flex-shrink: 0;
 }
 
-.tiktok { background: #171717; }
-.facebook { background: linear-gradient(135deg,#1877f2,#62b5ff); }
+/* ألوان أيقونات السوشيال ميديا */
+.facebook { background: #1877f2; }
+.facebook-group { background: #4267B2; }
+.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.tiktok { background: #000000; }
+.instapay { background: #6f2c91; } /* لون مقارب لإنستاباي */
+.wallet { background: #e30613; } /* لون فودافون كاش */
 
 .btn-visit {
-  padding: 10px 15px;
-  border-radius: 30px;
-  color: white;
-  font-size: 11px;
-  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: var(--olive-dark);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   white-space: nowrap;
+  transition: 0.3s;
 }
 
-.tiktok-card .btn-visit { background:#242424; }
-.facebook-card .btn-visit { background:#328cf2; }
-.channel-card .btn-visit { background:#8e66df; }
-
-.tiktok-card:hover { border-color:#777; }
-.facebook-card:hover { border-color:#72b6ff; }
-.channel-card:hover { border-color:#b99af5; }
+.platform-card:hover .btn-visit {
+  background: var(--gold);
+  color: var(--olive-dark);
+}
 
 .bottom-banner {
   margin-top: 25px;
-  padding: 17px;
-  border-radius: 20px;
+  padding: 15px;
+  border-radius: 18px;
   text-align: center;
-  background: linear-gradient(110deg,#fff0f6,#edf5ff,#eafaf0);
-  color: #8c7095;
-  font-size: 12px;
+  background: var(--olive-dark);
+  color: var(--gold);
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.8;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
 }
 
 .bottom-banner i {
-  color: #f06c9e;
-  margin: 0 4px;
+  margin: 0 5px;
 }
 
 .footer {
   text-align: center;
-  margin-top: 22px;
-  color: #b49bb4;
-  font-size: 11px;
+  margin-top: 25px;
+  color: var(--olive-light);
+  font-size: 12px;
   font-weight: 600;
 }
 
+.footer span {
+  color: #e74c3c;
+}
+
 @media(max-width:400px) {
-  .container {
-    padding: 28px 15px;
-  }
-
-  .platform-card {
-    padding: 11px;
-  }
-
-  .platform-name {
-    font-size: 12px;
-    gap: 8px;
-  }
-
-  .platform-icon {
-    width: 42px;
-    height: 42px;
-  }
-
-  .btn-visit {
-    padding: 9px 10px;
-    font-size: 10px;
-  }
+  .container { padding: 25px 15px; }
+  .platform-card { padding: 10px 12px; }
+  .platform-name { font-size: 13px; gap: 8px; }
+  .platform-icon { width: 36px; height: 36px; font-size: 16px; }
+  .btn-visit { padding: 6px 10px; font-size: 11px; }
+  h1 { font-size: 32px; }
 }
 </style>
 </head>
@@ -279,123 +278,97 @@ h1 {
 <div class="container">
 
   <header class="header">
-
-    <div class="logo">
-      <i class="fa-solid fa-shirt"></i>
+    <!-- أيقونة المحل -->
+    <div class="logo-icon">
+      <i class="fa-solid fa-vest"></i>
     </div>
 
-    <h1>NONO STORE</h1>
+    <h1>طرحتني</h1>
+    <div class="tagline">عالم كامل من الطرح</div>
 
-    <div class="tagline">KIDS & TEENS FASHION</div>
-
-    <div class="subtitle">
-      🌈 LITTLE FASHION, BIG STYLE!
-    </div>
-
-    <p class="description">
-      Discover cute outfits, trendy styles and
-      colorful fashion for every little personality! 💕
-    </p>
-
-    <div class="age-section">
-      <span class="age">🧸 Kids</span>
-      <span class="age">🌸 Girls</span>
-      <span class="age">⚡ Boys</span>
-      <span class="age">✨ Teens</span>
-    </div>
+    <div class="subtitle">✨ طرح ترندات بكل الألوان ✨</div>
+    
+    <!-- رقم الهاتف من الصورة -->
+    <a href="tel:01110187700" class="phone-number">
+      <i class="fa-solid fa-phone-volume"></i> 01110187700
+    </a>
 
   </header>
 
   <div class="section-title">
-    <i class="fa-solid fa-heart"></i>
-    FOLLOW OUR STORE
-    <i class="fa-solid fa-heart"></i>
+    <i class="fa-solid fa-heart" style="color: var(--gold);"></i>
+    تابعي جديدنا
+    <i class="fa-solid fa-heart" style="color: var(--gold);"></i>
   </div>
 
   <div class="platform-grid">
 
-    <!-- TIKTOK -->
-    <a href="https://www.tiktok.com/@nada_11773?_r=1&_t=ZS-9BI4D5W2eiy"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="platform-card tiktok-card">
-
+    <!-- فيسبوك بيدج -->
+    <a href="https://www.facebook.com/share/1EC37Z2T7x/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="platform-card">
       <div class="platform-name">
-        <div class="platform-icon tiktok">
-          <i class="fa-brands fa-tiktok"></i>
-        </div>
-        TikTok
+        <div class="platform-icon facebook"><i class="fa-brands fa-facebook-f"></i></div>
+        صفحة الفيسبوك
       </div>
-
-      <div class="btn-visit">
-        VISIT <i class="fa-solid fa-arrow-up-right-from-square"></i>
-      </div>
-
+      <div class="btn-visit">زيارة <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
-<!-- INSTAGRAM -->
-    <a href="https://www.instagram.com/assemetman75?stkn=MmUwNW55Ymwwams3&utm_source=qr"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="platform-card instagram-card">
-
+    <!-- فيسبوك جروب -->
+    <a href="https://www.facebook.com/share/g/1C4hGr5pY7/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="platform-card">
       <div class="platform-name">
-        <div class="platform-icon instagram">
-          <i class="fa-brands fa-instagram-f"></i>
-        </div>
-        Facebook Group
+        <div class="platform-icon facebook-group"><i class="fa-solid fa-users"></i></div>
+        جروب الفيسبوك
       </div>
-    
-    <!-- FACEBOOK GROUP -->
-    <a href="https://www.facebook.com/share/g/1C4hGr5pY7/?mibextid=wwXIfr"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="platform-card facebook-card">
-
-      <div class="platform-name">
-        <div class="platform-icon facebook">
-          <i class="fa-brands fa-facebook-f"></i>
-        </div>
-        Facebook Group
-      </div>
-
-      <div class="btn-visit">
-        VISIT <i class="fa-solid fa-arrow-up-right-from-square"></i>
-      </div>
-
+      <div class="btn-visit">انضمي <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
-    <!-- FACEBOOK CHANNEL -->
-    <a href="https://www.facebook.com/share/1EC37Z2T7x/?mibextid=wwXIfr"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="platform-card channel-card">
-
+    <!-- انستجرام -->
+    <a href="https://www.instagram.com/assemetman75?stkn=MmUwNW55Ymwwams3&utm_source=qr" target="_blank" rel="noopener noreferrer" class="platform-card">
       <div class="platform-name">
-        <div class="platform-icon facebook">
-          <i class="fa-brands fa-facebook-f"></i>
-        </div>
-        Facebook Channel
+        <div class="platform-icon instagram"><i class="fa-brands fa-instagram"></i></div>
+        انستجرام
       </div>
+      <div class="btn-visit">متابعة <i class="fa-solid fa-arrow-left"></i></div>
+    </a>
 
-      <div class="btn-visit">
-        VISIT <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    <!-- تيك توك -->
+    <a href="https://www.tiktok.com/@asimatman?_r=1&_t=ZS-9AJABNNz6u5" target="_blank" rel="noopener noreferrer" class="platform-card">
+      <div class="platform-name">
+        <div class="platform-icon tiktok"><i class="fa-brands fa-tiktok"></i></div>
+        تيك توك
       </div>
+      <div class="btn-visit">مشاهدة <i class="fa-solid fa-arrow-left"></i></div>
+    </a>
 
+    <!-- دفع: انستاباي -->
+    <a href="https://ipn.eg/S/assemetman11/instapay/6jjPjR" target="_blank" rel="noopener noreferrer" class="platform-card">
+      <div class="platform-name">
+        <div class="platform-icon instapay"><i class="fa-solid fa-money-bill-transfer"></i></div>
+        الدفع عبر InstaPay
+      </div>
+      <div class="btn-visit">تحويل <i class="fa-solid fa-arrow-left"></i></div>
+    </a>
+
+    <!-- دفع: فودافون كاش / فلوس -->
+    <a href="https://flous.page.link/6ZLx" target="_blank" rel="noopener noreferrer" class="platform-card">
+      <div class="platform-name">
+        <div class="platform-icon wallet"><i class="fa-solid fa-wallet"></i></div>
+        محفظة إلكترونية
+      </div>
+      <div class="btn-visit">دفع <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
   </div>
 
   <div class="bottom-banner">
-    <i class="fa-solid fa-star"></i>
-    Cute Looks · Happy Kids · Trendy Teens
-    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-crown"></i>
+    أناقة · حشمة · ترند
+    <i class="fa-solid fa-crown"></i>
     <br>
-    YOUR STYLE STARTS HERE! 💗
+    اختاري إطلالتك المفضلة الآن 💚
   </div>
 
   <div class="footer">
-    MADE WITH LOVE ♡ NONO STORE
+    صُنع بكل حب <span>♡</span> طرحتني
   </div>
 
 </div>

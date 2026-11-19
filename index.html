@@ -12,11 +12,11 @@
 
 <style>
 :root {
-  /* تم تخفيف الشفافية هنا (من 0.85 إلى 0.55) */
-  --olive-card: rgba(44, 56, 18, 0.55); 
+  /* تم تخفيف الشفافية أكثر (0.35) ليظهر الخلفية بوضوح */
+  --olive-card: rgba(35, 45, 15, 0.35); 
   --vanilla: #f9f3e3;    
   --gold: #dcb336;       
-  --gold-glow: rgba(220, 179, 54, 0.3);
+  --gold-glow: rgba(220, 179, 54, 0.4);
 }
 
 * {
@@ -28,13 +28,14 @@
 
 body {
   min-height: 100vh;
-  padding: 25px 15px;
+  min-height: 100dvh; /* لضمان التوافق مع شاشات الموبايل الحديثة */
+  padding: 20px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* تم تخفيف الطبقة الزيتية فوق الصورة أيضاً لتظهر الصورة بشكل أوضح */
+  /* تخفيف الطبقة الزيتية فوق الصورة */
   background: 
-    linear-gradient(rgba(44, 56, 18, 0.6), rgba(44, 56, 18, 0.7)), 
+    linear-gradient(rgba(35, 45, 15, 0.4), rgba(35, 45, 15, 0.6)), 
     url('https://i.ibb.co/Fkwj22Bc/photo-2026-11-19-02-36-33.jpg'); 
   background-size: cover;
   background-position: center;
@@ -42,17 +43,17 @@ body {
   overflow-x: hidden;
 }
 
-/* تأثير الزجاج المصنفر للبطاقة الرئيسية */
+/* تصميم الكونتينر */
 .container {
   width: 100%;
-  max-width: 550px;
+  max-width: 500px; /* تصغير العرض قليلاً ليكون متناسقاً */
   background: var(--olive-card);
-  backdrop-filter: blur(15px); /* زيادة البلور قليلاً لتعويض الشفافية وضمان وضوح النص */
-  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(16px); /* زيادة البلور لتعويض الشفافية */
+  -webkit-backdrop-filter: blur(16px);
   border: 2px solid var(--gold);
   border-radius: 30px;
-  padding: 35px 25px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--gold-glow);
+  padding: clamp(20px, 5vw, 35px) clamp(15px, 4vw, 25px); /* مسافات مرنة حسب حجم الشاشة */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--gold-glow);
   position: relative;
   overflow: hidden;
   color: var(--vanilla);
@@ -66,10 +67,10 @@ body {
 
 /* صورة المحل */
 .logo-icon {
-  width: 180px;
-  height: 180px;
-  margin: 0 auto 20px;
-  border-radius: 25px; 
+  width: clamp(130px, 40vw, 170px); /* عرض مرن حسب الشاشة */
+  height: clamp(130px, 40vw, 170px);
+  margin: 0 auto 15px;
+  border-radius: 20px; 
   overflow: hidden; 
   display: flex;
   align-items: center;
@@ -86,40 +87,40 @@ body {
 }
 
 h1 {
-  font-size: 42px;
+  font-size: clamp(30px, 8vw, 42px); /* حجم خط مرن */
   font-weight: 900;
   color: var(--vanilla);
   letter-spacing: -1px;
   margin-bottom: 5px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.6); /* تقوية الظل قليلاً لضمان القراءة */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8); /* ظل قوي لضمان القراءة */
 }
 
 .tagline {
   color: var(--vanilla);
-  font-size: 16px;
+  font-size: clamp(14px, 4vw, 16px);
   font-weight: 700;
   margin-bottom: 15px;
-  opacity: 0.95;
-  text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 5px rgba(0,0,0,0.8);
 }
 
 .subtitle {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--vanilla);
-  padding: 8px 20px;
+  padding: 6px 16px;
   border-radius: 30px;
-  font-size: 13px;
+  font-size: clamp(12px, 3.5vw, 14px);
   font-weight: 700;
   border: 1px solid var(--gold);
   margin-bottom: 15px;
   backdrop-filter: blur(5px);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 /* عنوان القسم */
 .section-title {
   color: var(--vanilla);
-  font-size: 14px;
+  font-size: clamp(13px, 3.5vw, 15px);
   font-weight: 800;
   margin-bottom: 15px;
   text-align: center;
@@ -127,14 +128,14 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 .section-title::before,
 .section-title::after {
   content: "";
   height: 1px;
-  width: 40px;
+  width: 30px;
   background: var(--gold);
 }
 
@@ -151,11 +152,11 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 18px;
+  padding: clamp(10px, 3vw, 14px) clamp(12px, 3.5vw, 18px);
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
+  border-radius: 16px;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
 }
@@ -163,29 +164,29 @@ h1 {
 .platform-card:hover {
   transform: translateY(-3px);
   border-color: var(--gold);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   background: rgba(255, 255, 255, 0.2);
 }
 
 .platform-name {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: clamp(8px, 2vw, 12px);
   color: var(--vanilla);
-  font-size: 15px;
+  font-size: clamp(13px, 4vw, 15px);
   font-weight: 700;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .platform-icon {
-  width: 42px;
-  height: 42px;
+  width: clamp(36px, 10vw, 42px);
+  height: clamp(36px, 10vw, 42px);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 20px;
+  font-size: clamp(16px, 5vw, 20px);
   flex-shrink: 0;
 }
 
@@ -198,37 +199,36 @@ h1 {
 .wallet { background: #e30613; }
 .whatsapp { background: #25D366; }
 
-/* الأزرار ذهبية والنص زيتي */
+/* الأزرار */
 .btn-visit {
-  padding: 8px 14px;
+  padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 14px);
   border-radius: 20px;
   background: var(--gold); 
   color: #2c3812; 
-  font-size: 12px;
+  font-size: clamp(11px, 3vw, 12px);
   font-weight: 800;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   white-space: nowrap;
   transition: 0.3s;
 }
 
 .platform-card:hover .btn-visit {
   background: var(--vanilla); 
-  color: #2c3812; 
 }
 
 /* البانر السفلي */
 .bottom-banner {
-  margin-top: 25px;
-  padding: 15px;
-  border-radius: 18px;
+  margin-top: 20px;
+  padding: clamp(12px, 3vw, 15px);
+  border-radius: 16px;
   text-align: center;
   background: var(--vanilla); 
   color: #2c3812; 
-  font-size: 14px;
+  font-size: clamp(12px, 3.5vw, 14px);
   font-weight: 800;
-  line-height: 1.8;
+  line-height: 1.6;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
@@ -238,26 +238,31 @@ h1 {
 
 .footer {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 20px;
   color: var(--vanilla);
-  font-size: 12px;
+  font-size: clamp(11px, 3vw, 12px);
   font-weight: 600;
-  opacity: 0.9;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .footer span {
   color: var(--gold);
 }
 
-@media(max-width:400px) {
-  .container { padding: 25px 15px; }
-  .platform-card { padding: 10px 12px; }
-  .platform-name { font-size: 13px; gap: 8px; }
-  .platform-icon { width: 36px; height: 36px; font-size: 16px; }
-  .btn-visit { padding: 6px 10px; font-size: 11px; }
-  h1 { font-size: 34px; }
-  .logo-icon { width: 150px; height: 150px; }
+/* تعديلات إضافية للشاشات الصغيرة جداً (الموبايلات) */
+@media (max-width: 380px) {
+  .container {
+    padding: 15px 10px;
+  }
+  .platform-card {
+    padding: 8px 10px;
+  }
+  .btn-visit span {
+    display: none; /* إخفاء كلمة "مراسلة/زيارة" على الشاشات الصغيرة جداً لتوفير المساحة */
+  }
+  .btn-visit i {
+    margin: 0; /* إبقاء السهم فقط */
+  }
 }
 </style>
 </head>
@@ -293,7 +298,7 @@ h1 {
         <div class="platform-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
         للتواصل مع الأونر
       </div>
-      <div class="btn-visit">مراسلة <i class="fa-solid fa-arrow-left"></i></div>
+      <div class="btn-visit"><span>مراسلة</span> <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
     <!-- فيسبوك -->
@@ -302,7 +307,7 @@ h1 {
         <div class="platform-icon facebook"><i class="fa-brands fa-facebook-f"></i></div>
         صفحة الفيسبوك
       </div>
-      <div class="btn-visit">زيارة <i class="fa-solid fa-arrow-left"></i></div>
+      <div class="btn-visit"><span>زيارة</span> <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
     <!-- فيسبوك جروب -->
@@ -311,7 +316,7 @@ h1 {
         <div class="platform-icon facebook-group"><i class="fa-solid fa-users"></i></div>
         جروب الفيسبوك
       </div>
-      <div class="btn-visit">انضمي <i class="fa-solid fa-arrow-left"></i></div>
+      <div class="btn-visit"><span>انضمي</span> <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
     <!-- انستجرام -->
@@ -320,7 +325,7 @@ h1 {
         <div class="platform-icon instagram"><i class="fa-brands fa-instagram"></i></div>
         انستجرام
       </div>
-      <div class="btn-visit">متابعة <i class="fa-solid fa-arrow-left"></i></div>
+      <div class="btn-visit"><span>متابعة</span> <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
     <!-- تيك توك -->
@@ -329,7 +334,7 @@ h1 {
         <div class="platform-icon tiktok"><i class="fa-brands fa-tiktok"></i></div>
         تيك توك
       </div>
-      <div class="btn-visit">مشاهدة <i class="fa-solid fa-arrow-left"></i></div>
+      <div class="btn-visit"><span>مشاهدة</span> <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
     <!-- دفع: انستاباي -->
@@ -338,7 +343,7 @@ h1 {
         <div class="platform-icon instapay"><i class="fa-solid fa-money-bill-transfer"></i></div>
         الدفع عبر InstaPay
       </div>
-      <div class="btn-visit">تحويل <i class="fa-solid fa-arrow-left"></i></div>
+      <div class="btn-visit"><span>تحويل</span> <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
     <!-- دفع: فودافون كاش / فلوس -->
@@ -347,7 +352,7 @@ h1 {
         <div class="platform-icon wallet"><i class="fa-solid fa-wallet"></i></div>
         محفظة إلكترونية
       </div>
-      <div class="btn-visit">دفع <i class="fa-solid fa-arrow-left"></i></div>
+      <div class="btn-visit"><span>دفع</span> <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
   </div>

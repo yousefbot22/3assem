@@ -12,14 +12,12 @@
 
 <style>
 :root {
-  /* الألوان المعتمدة */
-  --olive-dark: #2c3812; 
-  --olive-light: #4e6127;
-  --vanilla-bg: #fcfaf5;
-  --vanilla-card: #ffffff;
-  --gold: #dcb336;
-  --gold-glow: rgba(220, 179, 54, 0.3);
-  --text-color: #2c3316;
+  /* الألوان الجديدة: زيتي وفانيليا */
+  --olive-main: #3b4a1b; /* لون خلفية الموقع الزيتي */
+  --olive-card: #2c3812; /* لون البطاقات والحاوية الزيتي الغامق */
+  --vanilla: #f9f3e3;    /* لون النصوص الفانيليا لاتيه */
+  --gold: #dcb336;       /* اللون الذهبي للزراير واللمسات */
+  --gold-glow: rgba(220, 179, 54, 0.25);
 }
 
 * {
@@ -36,22 +34,23 @@ body {
   align-items: center;
   justify-content: center;
   background: 
-    radial-gradient(circle at 10% 20%, rgba(220, 179, 54, 0.15), transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(78, 97, 39, 0.1), transparent 40%),
-    var(--vanilla-bg);
+    radial-gradient(circle at 10% 20%, rgba(220, 179, 54, 0.1), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05), transparent 40%),
+    var(--olive-main);
   overflow-x: hidden;
 }
 
 .container {
   width: 100%;
   max-width: 550px;
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--olive-card);
   border: 2px solid var(--gold);
   border-radius: 30px;
   padding: 35px 25px;
-  box-shadow: 0 15px 40px rgba(44, 56, 18, 0.08), 0 0 20px var(--gold-glow);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 20px var(--gold-glow);
   position: relative;
   overflow: hidden;
+  color: var(--vanilla); /* جعل اللون الافتراضي للنصوص فانيليا */
 }
 
 /* تأثير الإضاءة الذهبية في الخلفية */
@@ -74,17 +73,17 @@ body {
   z-index: 1;
 }
 
-/* صورة المحل */
+/* تكبير صورة المحل */
 .logo-icon {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto 15px;
-  border-radius: 20px; 
+  width: 180px; /* تم التكبير من 130px */
+  height: 180px; /* تم التكبير من 130px */
+  margin: 0 auto 20px;
+  border-radius: 25px; 
   overflow: hidden; 
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 25px var(--gold-glow);
+  box-shadow: 0 0 30px var(--gold-glow);
   border: 3px solid var(--gold);
 }
 
@@ -95,24 +94,26 @@ body {
 }
 
 h1 {
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 900;
-  color: var(--olive-dark);
+  color: var(--vanilla);
   letter-spacing: -1px;
   margin-bottom: 5px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .tagline {
-  color: var(--olive-light);
-  font-size: 15px;
+  color: var(--vanilla);
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 15px;
+  opacity: 0.9;
 }
 
 .subtitle {
   display: inline-block;
-  background: var(--vanilla-bg);
-  color: var(--olive-dark);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--vanilla);
   padding: 8px 20px;
   border-radius: 30px;
   font-size: 13px;
@@ -121,31 +122,9 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* رقم الهاتف */
-.phone-number {
-  display: block;
-  color: var(--olive-dark);
-  font-weight: 700;
-  font-size: 16px;
-  text-decoration: none;
-  margin-bottom: 20px;
-  direction: ltr; 
-}
-
-.phone-number i {
-  color: var(--gold);
-  margin-left: 5px;
-}
-
-.description {
-  color: #6b7355;
-  font-size: 14px;
-  margin-bottom: 25px;
-  line-height: 1.8;
-}
-
+/* عنوان القسم */
 .section-title {
-  color: var(--olive-dark);
+  color: var(--vanilla);
   font-size: 14px;
   font-weight: 800;
   margin-bottom: 15px;
@@ -172,30 +151,31 @@ h1 {
   z-index: 1;
 }
 
+/* البطاقات أصبحت زيتية أغمق قليلاً من الخلفية */
 .platform-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 18px;
-  background: var(--vanilla-bg);
+  background: rgba(255, 255, 255, 0.05); /* شفافية خفيفة جداً */
   border-radius: 18px;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .platform-card:hover {
   transform: translateY(-3px);
   border-color: var(--gold);
-  box-shadow: 0 8px 20px rgba(220, 179, 54, 0.15);
-  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .platform-name {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--olive-dark);
+  color: var(--vanilla); /* النصوص فانيليا */
   font-size: 15px;
   font-weight: 700;
 }
@@ -221,14 +201,14 @@ h1 {
 .wallet { background: #e30613; }
 .whatsapp { background: #25D366; }
 
-/* ألوان الأزرار */
+/* الأزرار ذهبية والنص زيتي */
 .btn-visit {
   padding: 8px 14px;
   border-radius: 20px;
   background: var(--gold); 
-  color: var(--olive-dark); 
+  color: var(--olive-card); 
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -237,22 +217,22 @@ h1 {
 }
 
 .platform-card:hover .btn-visit {
-  background: var(--olive-dark); 
-  color: var(--gold); 
+  background: var(--vanilla); 
+  color: var(--olive-card); 
 }
 
-/* ألوان البانر السفلي المعكوسة */
+/* البانر السفلي فانيليا ونص زيتي */
 .bottom-banner {
   margin-top: 25px;
   padding: 15px;
   border-radius: 18px;
   text-align: center;
-  background: var(--gold); 
-  color: var(--olive-dark); 
-  font-size: 13px;
-  font-weight: 700;
+  background: var(--vanilla); 
+  color: var(--olive-card); 
+  font-size: 14px;
+  font-weight: 800;
   line-height: 1.8;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.05); 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .bottom-banner i {
@@ -262,13 +242,14 @@ h1 {
 .footer {
   text-align: center;
   margin-top: 25px;
-  color: var(--olive-light);
+  color: var(--vanilla);
   font-size: 12px;
   font-weight: 600;
+  opacity: 0.8;
 }
 
 .footer span {
-  color: #e74c3c;
+  color: var(--gold);
 }
 
 @media(max-width:400px) {
@@ -277,8 +258,8 @@ h1 {
   .platform-name { font-size: 13px; gap: 8px; }
   .platform-icon { width: 36px; height: 36px; font-size: 16px; }
   .btn-visit { padding: 6px 10px; font-size: 11px; }
-  h1 { font-size: 32px; }
-  .logo-icon { width: 110px; height: 110px; }
+  h1 { font-size: 34px; }
+  .logo-icon { width: 150px; height: 150px; } /* تصغير بسيط للموبايل */
 }
 </style>
 </head>
@@ -289,7 +270,7 @@ h1 {
 
   <header class="header">
     
-    <!-- تم وضع الرابط المباشر للصورة هنا -->
+    <!-- الصورة بالحجم المكبر -->
     <div class="logo-icon">
       <img src="https://i.ibb.co/HfddKKnZ/photo-2026-11-19-02-17-18.jpg" alt="محل طرحتني">
     </div>

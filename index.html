@@ -12,7 +12,7 @@
 
 <style>
 :root {
-  /* تم تعديل الألوان لتكون أكثر عمقاً وأناقة */
+  /* الألوان المعتمدة */
   --olive-dark: #2c3812; 
   --olive-light: #4e6127;
   --vanilla-bg: #fcfaf5;
@@ -216,11 +216,12 @@ h1 {
 .wallet { background: #e30613; }
 .whatsapp { background: #25D366; }
 
+/* تم عكس ألوان الأزرار هنا */
 .btn-visit {
   padding: 8px 14px;
   border-radius: 20px;
-  background: var(--olive-dark);
-  color: var(--gold);
+  background: var(--gold); /* خلفية ذهبية */
+  color: var(--olive-dark); /* نص زيتي */
   font-size: 12px;
   font-weight: 700;
   display: flex;
@@ -230,9 +231,10 @@ h1 {
   transition: 0.3s;
 }
 
+/* وعند الماوس تعكس مرة أخرى */
 .platform-card:hover .btn-visit {
-  background: var(--gold);
-  color: var(--olive-dark);
+  background: var(--olive-dark); /* خلفية زيتية */
+  color: var(--gold); /* نص ذهبي */
 }
 
 .bottom-banner {

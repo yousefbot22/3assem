@@ -12,12 +12,10 @@
 
 <style>
 :root {
-  /* الألوان الجديدة: زيتي وفانيليا */
-  --olive-main: #3b4a1b; /* لون خلفية الموقع الزيتي */
-  --olive-card: #2c3812; /* لون البطاقات والحاوية الزيتي الغامق */
+  --olive-card: rgba(44, 56, 18, 0.85); /* لون زيتي شفاف */
   --vanilla: #f9f3e3;    /* لون النصوص الفانيليا لاتيه */
   --gold: #dcb336;       /* اللون الذهبي للزراير واللمسات */
-  --gold-glow: rgba(220, 179, 54, 0.25);
+  --gold-glow: rgba(220, 179, 54, 0.3);
 }
 
 * {
@@ -27,6 +25,7 @@
   font-family: 'Cairo', sans-serif;
 }
 
+/* تم تغيير رابط الخلفية للصورة الجديدة */
 body {
   min-height: 100vh;
   padding: 25px 15px;
@@ -34,37 +33,28 @@ body {
   align-items: center;
   justify-content: center;
   background: 
-    radial-gradient(circle at 10% 20%, rgba(220, 179, 54, 0.1), transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05), transparent 40%),
-    var(--olive-main);
+    linear-gradient(rgba(44, 56, 18, 0.8), rgba(44, 56, 18, 0.9)), /* الطبقة الزيتية الشفافة */
+    url('https://i.ibb.co/Fkwj22Bc/photo-2026-11-19-02-36-33.jpg'); /* صورة الخلفية الجديدة */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
+/* تأثير الزجاج المصنفر للبطاقة الرئيسية */
 .container {
   width: 100%;
   max-width: 550px;
   background: var(--olive-card);
+  backdrop-filter: blur(12px); /* تأثير الزجاج */
+  -webkit-backdrop-filter: blur(12px);
   border: 2px solid var(--gold);
   border-radius: 30px;
   padding: 35px 25px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 20px var(--gold-glow);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--gold-glow);
   position: relative;
   overflow: hidden;
-  color: var(--vanilla); /* جعل اللون الافتراضي للنصوص فانيليا */
-}
-
-/* تأثير الإضاءة الذهبية في الخلفية */
-.container::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 150px;
-  height: 150px;
-  background: var(--gold-glow);
-  filter: blur(50px);
-  border-radius: 50%;
-  pointer-events: none;
+  color: var(--vanilla);
 }
 
 .header {
@@ -73,10 +63,10 @@ body {
   z-index: 1;
 }
 
-/* تكبير صورة المحل */
+/* صورة المحل */
 .logo-icon {
-  width: 180px; /* تم التكبير من 130px */
-  height: 180px; /* تم التكبير من 130px */
+  width: 180px;
+  height: 180px;
   margin: 0 auto 20px;
   border-radius: 25px; 
   overflow: hidden; 
@@ -85,6 +75,7 @@ body {
   justify-content: center;
   box-shadow: 0 0 30px var(--gold-glow);
   border: 3px solid var(--gold);
+  background: #000; /* خلفية احتياطية أثناء تحميل الصورة */
 }
 
 .logo-icon img {
@@ -99,7 +90,7 @@ h1 {
   color: var(--vanilla);
   letter-spacing: -1px;
   margin-bottom: 5px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .tagline {
@@ -112,7 +103,7 @@ h1 {
 
 .subtitle {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--vanilla);
   padding: 8px 20px;
   border-radius: 30px;
@@ -151,31 +142,31 @@ h1 {
   z-index: 1;
 }
 
-/* البطاقات أصبحت زيتية أغمق قليلاً من الخلفية */
+/* البطاقات الداخلية */
 .platform-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.05); /* شفافية خفيفة جداً */
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.3s ease;
 }
 
 .platform-card:hover {
   transform: translateY(-3px);
   border-color: var(--gold);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .platform-name {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--vanilla); /* النصوص فانيليا */
+  color: var(--vanilla);
   font-size: 15px;
   font-weight: 700;
 }
@@ -218,21 +209,21 @@ h1 {
 
 .platform-card:hover .btn-visit {
   background: var(--vanilla); 
-  color: var(--olive-card); 
+  color: #2c3812; 
 }
 
-/* البانر السفلي فانيليا ونص زيتي */
+/* البانر السفلي */
 .bottom-banner {
   margin-top: 25px;
   padding: 15px;
   border-radius: 18px;
   text-align: center;
   background: var(--vanilla); 
-  color: var(--olive-card); 
+  color: #2c3812; 
   font-size: 14px;
   font-weight: 800;
   line-height: 1.8;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .bottom-banner i {
@@ -259,7 +250,7 @@ h1 {
   .platform-icon { width: 36px; height: 36px; font-size: 16px; }
   .btn-visit { padding: 6px 10px; font-size: 11px; }
   h1 { font-size: 34px; }
-  .logo-icon { width: 150px; height: 150px; } /* تصغير بسيط للموبايل */
+  .logo-icon { width: 150px; height: 150px; }
 }
 </style>
 </head>
@@ -270,7 +261,7 @@ h1 {
 
   <header class="header">
     
-    <!-- الصورة بالحجم المكبر -->
+    <!-- صورة المحل (إذا كنت تقصد تغيير صورة اللوجو أيضاً، يمكنك تغيير الرابط هنا) -->
     <div class="logo-icon">
       <img src="https://i.ibb.co/HfddKKnZ/photo-2026-11-19-02-17-18.jpg" alt="محل طرحتني">
     </div>

@@ -74,19 +74,24 @@ body {
   z-index: 1;
 }
 
+/* صورة المحل */
 .logo-icon {
-  width: 85px;
-  height: 85px;
+  width: 130px;
+  height: 130px;
   margin: 0 auto 15px;
-  border-radius: 50%;
-  background: var(--olive-dark);
+  border-radius: 20px; 
+  overflow: hidden; 
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
-  font-size: 40px;
   box-shadow: 0 0 25px var(--gold-glow);
-  border: 2px solid var(--gold);
+  border: 3px solid var(--gold);
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
 }
 
 h1 {
@@ -216,12 +221,12 @@ h1 {
 .wallet { background: #e30613; }
 .whatsapp { background: #25D366; }
 
-/* تم عكس ألوان الأزرار هنا */
+/* ألوان الأزرار */
 .btn-visit {
   padding: 8px 14px;
   border-radius: 20px;
-  background: var(--gold); /* خلفية ذهبية */
-  color: var(--olive-dark); /* نص زيتي */
+  background: var(--gold); 
+  color: var(--olive-dark); 
   font-size: 12px;
   font-weight: 700;
   display: flex;
@@ -231,23 +236,23 @@ h1 {
   transition: 0.3s;
 }
 
-/* وعند الماوس تعكس مرة أخرى */
 .platform-card:hover .btn-visit {
-  background: var(--olive-dark); /* خلفية زيتية */
-  color: var(--gold); /* نص ذهبي */
+  background: var(--olive-dark); 
+  color: var(--gold); 
 }
 
+/* تم عكس ألوان البانر السفلي هنا */
 .bottom-banner {
   margin-top: 25px;
   padding: 15px;
   border-radius: 18px;
   text-align: center;
-  background: var(--olive-dark);
-  color: var(--gold);
+  background: var(--gold); /* خلفية ذهبية */
+  color: var(--olive-dark); /* نص زيتي غامق */
   font-size: 13px;
   font-weight: 700;
   line-height: 1.8;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* ظل داخلي خفيف جداً ليناسب اللون الفاتح */
 }
 
 .bottom-banner i {
@@ -273,6 +278,7 @@ h1 {
   .platform-icon { width: 36px; height: 36px; font-size: 16px; }
   .btn-visit { padding: 6px 10px; font-size: 11px; }
   h1 { font-size: 32px; }
+  .logo-icon { width: 110px; height: 110px; }
 }
 </style>
 </head>
@@ -282,9 +288,10 @@ h1 {
 <div class="container">
 
   <header class="header">
-    <!-- أيقونة المحل -->
+    
+    <!-- صورة المحل -->
     <div class="logo-icon">
-      <i class="fa-solid fa-vest"></i>
+      <img src="store.jpg" alt="محل طرحتني">
     </div>
 
     <h1>طرحتي</h1>
@@ -311,7 +318,7 @@ h1 {
       <div class="btn-visit">مراسلة <i class="fa-solid fa-arrow-left"></i></div>
     </a>
 
-    <!-- فيسبوك (الرابط الجديد) -->
+    <!-- فيسبوك -->
     <a href="https://www.facebook.com/share/1CgCjVSXjy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="platform-card">
       <div class="platform-name">
         <div class="platform-icon facebook"><i class="fa-brands fa-facebook-f"></i></div>
@@ -367,6 +374,7 @@ h1 {
 
   </div>
 
+  <!-- البانر السفلي بالألوان المعكوسة -->
   <div class="bottom-banner">
     <i class="fa-solid fa-crown"></i>
     أناقة · ترند
